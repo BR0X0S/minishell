@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 13:46:09 by oumondad          #+#    #+#             */
-/*   Updated: 2024/07/18 14:17:46 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/07/18 21:43:28 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,27 @@ t_env	*lst_last(t_env	*head)
 	return (head);
 }
 
-t_env	*env_add_back(t_env *head, char *name, char	**expand)
+t_env	*new_node(char *name, char	*expand)
 {
-	
+	t_env	*new_node;
+
+	new_node = malloc(sizeof(t_env));
+	if (!new_node)
+		ft_error("new_node allocation faild");
+	new_node->name = name;
+	new_node->expand = ft_split(expand, ':');
+	return (new_node);
+}
+
+t_env	*env_add_back(t_env **head, t_env *new_node)
+{
+	t_env	*last_node;
+
+	if (!head)
+		return ;
+	last_node = lst_last(*head);
+	if (*head)
+		new_node->next = new_node;
+	else
+		*head = new_node;
 }

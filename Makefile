@@ -6,13 +6,13 @@
 #    By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/18 13:27:44 by oumondad          #+#    #+#              #
-#    Updated: 2024/07/18 15:21:00 by oumondad         ###   ########.fr        #
+#    Updated: 2024/07/18 21:49:58 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Minishell
 
-SRC = normal_split.c mini_libft.c start.c
+SRC = normal_split.c mini_libft.c start.c main.c tansemih_utils.c
 
 OBJ = ${SRC:.c=.o}
 

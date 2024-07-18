@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:18:41 by oumondad          #+#    #+#             */
-/*   Updated: 2024/07/18 20:46:15 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/07/18 21:43:59 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,35 +83,35 @@ char	**get_envs_expand(char **env)
 // 	return (0);
 // }
 
-int main(int ac, char **av, char **env)
-{
-	(void)ac;	
-	(void)av;
-	(void)env;
-	char **names;
-	char **expands;
-	names = get_envs_names(env);
-	expands = get_envs_expand(env);
-	int	i = 0;
-	while (env[i])
-	{
-		printf("🦁Name ->%s", names[i]);
-		printf("🐐Expand ->%s\n", expands[i]);
-		i++;
-	}
-	int j = 0;
-	while (j <= i)
-	{
-		free(names[j]);
-		j++;
-	}
-	free(names);
-	j = 0;
-	while (j <= i)
-	{
-		free(expands[j]);
-		j++;
-	}
-	free(expands);
-	return (0);
-}
+// int main(int ac, char **av, char **env)
+// {
+// 	(void)ac;	
+// 	(void)av;
+// 	(void)env;
+// 	char **names;
+// 	char **expands;
+// 	names = get_envs_names(env);
+// 	expands = get_envs_expand(env);
+// 	int	i = 0;
+// 	while (env[i])
+// 	{
+// 		printf("🦁Name ->%s", names[i]);
+// 		printf("🐐Expand ->%s\n", expands[i]);
+// 		i++;
+// 	}
+// 	int j = 0;
+// 	while (j <= i)
+// 	{
+// 		free(names[j]);
+// 		j++;
+// 	}
+// 	free(names);
+// 	j = 0;
+// 	while (j <= i)
+// 	{
+// 		free(expands[j]);
+// 		j++;
+// 	}
+// 	free(expands);
+// 	return (0);
+// }
