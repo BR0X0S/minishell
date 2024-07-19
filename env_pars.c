@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tansemih_utils.c                                   :+:      :+:    :+:   */
+/*   env_pars.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 13:46:09 by oumondad          #+#    #+#             */
-/*   Updated: 2024/07/19 16:26:55 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/07/19 20:26:04 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	env_add_back(t_env **head, t_env *new_node)
 	if (*head)
 		last_node->next = new_node;
 	else
-		*head = new_node; 
+		*head = new_node;
 }
 
 t_env	*get_env(char **env)
@@ -79,21 +79,4 @@ t_env	*get_env(char **env)
 		j++;
 	}
 	return (head);
-}
-
-void	print_env(t_env *head)
-{
-	int	i;
-	while (head)
-	{
-		i = 0;
-		printf("name=%s\nexpand -> ", head->name);
-		while (head->expand[i])
-		{
-			printf("%s:", head->expand[i]);
-			i++;
-		}
-		printf("\n");
-		head = head->next;
-	}
 }

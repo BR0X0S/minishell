@@ -6,13 +6,13 @@
 #    By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/18 13:27:44 by oumondad          #+#    #+#              #
-#    Updated: 2024/07/18 21:49:58 by oumondad         ###   ########.fr        #
+#    Updated: 2024/07/19 20:31:16 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Minishell
 
-SRC = normal_split.c mini_libft.c start.c main.c tansemih_utils.c
+SRC = normal_split.c mini_libft.c start.c main.c env_pars.c env_pars_utils.c
 
 OBJ = ${SRC:.c=.o}
 
@@ -31,8 +31,8 @@ clean :
 fclean : clean
 	rm -rf ${NAME} ${BNAME}
 
-re : fclean all bonus
+re : fclean all
 
 .PHONY : re all clean fclean
 
-.SECONDARY: $(OBJ) $(BOBJ)
+.SECONDARY: $(OBJ)
