@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 13:46:09 by oumondad          #+#    #+#             */
-/*   Updated: 2024/07/19 20:26:04 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/07/19 23:32:20 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ t_env	*new_node(char *name, char	*expand)
 	new_node->name = name;
 	new_node->expand = ft_split(expand, ':');
 	new_node->next = NULL;
+	free(expand);
 	return (new_node);
 }
 
@@ -78,5 +79,7 @@ t_env	*get_env(char **env)
 		env_add_back(&head, new_env);
 		j++;
 	}
+	free(expand);
+	free(name);
 	return (head);
 }

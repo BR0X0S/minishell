@@ -6,10 +6,10 @@
 /*   By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:18:41 by oumondad          #+#    #+#             */
-/*   Updated: 2024/07/19 20:31:42 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/07/19 23:37:40 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-/*hada khawi ghi bddel sda3a bkhra*/
+/*hada khawi ghi bddel sa3a bkhra maps poroti*/

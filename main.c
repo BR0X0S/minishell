@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 21:44:19 by oumondad          #+#    #+#             */
-/*   Updated: 2024/07/19 20:15:42 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/07/19 23:04:27 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	main(int ac, char **av, char **env)
 	(void)env;
 	head = get_env(env);
 	print_env(head);
-	return (0);
+	exit (0);
 }
