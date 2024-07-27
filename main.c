@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 21:44:19 by oumondad          #+#    #+#             */
-/*   Updated: 2024/07/19 23:04:27 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/07/27 11:00:39 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ int	main(int ac, char **av, char **env)
 	(void)av;
 	(void)env;
 	head = get_env(env);
-	print_env(head);
+	// print_env(env);
+	// printf("%d\n", ft_strcmp(av[1], av[2]));
+	nsit_smiya(env, av[1], 1);
+	// expand_env(av[1]);
+	// printf("%s\n", av[1]);
 	exit (0);
 }

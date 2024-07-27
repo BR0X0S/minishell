@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 13:27:37 by oumondad          #+#    #+#             */
-/*   Updated: 2024/07/19 20:26:16 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/07/27 11:02:32 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ char	**get_envs_expand(char **env)
 	return (splited_expands);
 }
 
-void	print_env(t_env *head)
+void	print_struct(t_env *head)
 {
 	int	i;
 
@@ -111,10 +111,33 @@ void	print_env(t_env *head)
 		printf("%s=", head->name);
 		while (head->expand[i])
 		{
-			printf("%s:", head->expand[i]);
+			printf("%s", head->expand[i]);
 			i++;
+			if (head->expand[i])
+				printf(":");
 		}
 		printf("\n");
 		head = head->next;
 	}
+}
+
+void	print_env(char **env)
+{
+	char	**names;
+	char	**expand;
+	int		i;
+
+	i = 0;
+	names = get_envs_names(env);
+	expand = get_envs_expand(env);
+	while (env[i])
+	{
+		printf("%s=", names[i]);
+		printf("%s\n", expand[i]);
+		free(names[i]);
+		free(expand[i]);
+		i++;
+	}
+	free(names);
+	free(expand);
 }
