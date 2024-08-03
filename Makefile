@@ -6,13 +6,13 @@
 #    By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/18 13:27:44 by oumondad          #+#    #+#              #
-#    Updated: 2024/07/19 20:31:16 by oumondad         ###   ########.fr        #
+#    Updated: 2024/08/03 16:16:51 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Minishell
 
-SRC = normal_split.c mini_libft.c start.c main.c env_pars.c env_pars_utils.c
+SRC = minishell.c tools.c linked_list.c env_parse.c
 
 OBJ = ${SRC:.c=.o}
 

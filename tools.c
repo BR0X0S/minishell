@@ -1,16 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start.c                                            :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/18 14:18:41 by oumondad          #+#    #+#             */
-/*   Updated: 2024/07/27 11:01:36 by oumondad         ###   ########.fr       */
+/*   Created: 2024/08/02 16:34:04 by oumondad          #+#    #+#             */
+/*   Updated: 2024/08/03 15:54:50 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+size_t	ft_strlen(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+		i++;
+	return (i);
+}
+
+void	ft_putstr_fd(char *str, int fd)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write (fd, &str[i], 1);
+		i++;
+	}
+}
 
 int	ft_strcmp(char *str1, char *str2)
 {
@@ -25,41 +49,8 @@ int	ft_strcmp(char *str1, char *str2)
 		return (1);
 }
 
-void	ft_putstr_fd(char *str, int fd)
+void	ft_error(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		write (fd, &str[i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
-}
-
-void	nsit_smiya(char **env, char *str, int fd)
-{
-	char	**names;
-	char	**expand;
-	int		i;
-
-	i = 0;
-	names = get_envs_names(env);
-	expand = get_envs_expand(env);
-	while (env[i])
-	{
-		if (ft_strcmp(names[i], &str[1]) == 0)
-			ft_putstr_fd(expand[i], fd);
-		free(names[i]);
-		free(expand[i]);
-		i++;
-	}
-	while (env[i])
-	{
-		free(names[i]);
-		free(expand[i]);
-	}
-	free(names);
-	free(expand);
+	write (2, str, ft_strlen(str));
+	exit (1);
 }
