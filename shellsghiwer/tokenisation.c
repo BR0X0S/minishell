@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 17:18:38 by oumondad          #+#    #+#             */
-/*   Updated: 2024/08/10 20:03:13 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/08/11 16:09:46 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_len_qoute(char *str, char c)
 
 	i = 1;
 	
-	while (str[i] != c)
+	while (str[i] && str[i] != c)
 		i++;
 	return (i - 1);
 }
@@ -121,14 +121,13 @@ int main (int ac, char **av)
 	// 	printf("Number of words ->%d\n", count_word(str, ' '));
 	// 	free(str);
 	// }
-	t_token *head = ft_tokenisation(av[1]);
+	t_token *head = ft_tokenisation("'vjhksdbz $USER $USER'  | pwd | echo $USER");
 	while (head)
 	{
-		printf("type = %d\n", head->type);
-		printf("in_dq= %d\n", head->in_dq);
-		printf("in_sq= %d\n", head->in_sq);
-		printf("word = %s\n", head->str);
-
+		printf("type = |%d|\n", head->type);
+		printf("in_dq= |%d|\n", head->in_dq);
+		printf("in_sq= |%d|\n", head->in_sq);
+		printf("word = |%s|\n", head->str);
 		printf("================\n");
 		// free(head->str);
 		head = head->next;
